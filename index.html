@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>  
+	<title>Maths Quiz</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>Maths Quiz</h1>
+	<div>
+		<div id="num1"></div> 
+		<div id="op1"></div> 
+		<div id="num2"></div>
+		<div id="eq"></div>
+		<div id="ans"><input type="number" id="sol" value="" autofocus height="50px" width="50px"></div>
+	</div>
+	<br><br>
+	<br><br>
+	<br><br>
+	<button id="start">Start the quiz!</button>
+	<button id="enter" type="button" onclick="check()">Enter</button> 
+	<button type="button" onclick="reset()">Reset</button> 
+	<button type="button" onclick="score()">End</button> 
+	<p id="w1"></p>
+	<p id="w2"></p>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script> 	
+		var i=0;	
+		var j=0;
+		var c=0;
+		var a=0;
+		function score(){ 
+			document.getElementById('w1').innerHTML ="Score:" + j + ' / ' + i; 
+		}
+		function reset(){ 
+			$('#start').text('Start the quiz!');
+			i=0;
+			j=0; 
+			$("#w1").text("");
+		}
+		function check()
+		{
+			a=document.getElementById('sol').value; 
+			if(a==c){
+				j=j+1;
+				console.log('C'+j);
+				document.getElementById('w1').innerHTML = 'Correct';
+				setTimeout(function () {
+				document.getElementById('w1').innerHTML = '';
+				}, 1000);
+			}
+			else{
+					document.getElementById('w2').innerHTML = 'Incorrect';
+					setTimeout(function () {
+					document.getElementById('w2').innerHTML = '';
+				}, 1000);
+			}
+			$("#enter").hide(); 
+		}
+	$(document).ready(function(){  
+		$("#enter").hide();
+		$("#start").click(function(){ 
+				var d=0; 
+				$("enter").hide(); 
+				i=i+1;
+				var var3=Math.floor((Math.random()*10)+1);
+				var var2=Math.floor((Math.random()*10)+1);
+				var var1=Math.floor((Math.random()*10)+1);
+				var var4="+";
+				var d=0;
+				switch(var1){
+					case 1:
+					var4="+";
+					c=var2+var3;
+					break;
+					case 2:
+					var4="-";
+					c=var2-var3;
+					break;
+					case 3:
+					var4="*";
+					c=var2*var3;
+					break;
+					case 4:
+					if(var2 < 3){
+						var4="^";
+						c=var2**var3;
+					}
+					else
+					{
+						var4="-";
+						c=var2-var3;
+					}
+					break;
+					case 5:
+					var4="%";
+					c=var2%var3;
+					break;
+					case 6:
+					if(var2 % var3==0){
+						var4="/";
+						c=var2/var3;
+					}
+					else
+					{
+						var4="*";
+						c=var2*var3;
+					}
+					
+					break;
+					default:
+					var4="+";
+					c=var2+var3;
+					break;
+				}  
+				$("#num1").text(var2);
+				$("#num2").text(var3);
+				$("#op1").text(var4);
+				$("#eq").text("="); 
+				$("#start").text("Next"); 
+				$("#enter").show();
+	});
+}); 
+
+	
+	
+</script>
+</body>
+</html>

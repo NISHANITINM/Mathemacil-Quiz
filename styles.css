@@ -1,0 +1,52 @@
+body{
+	background-color:#d1d1e0;
+	font-size: 20px;
+}
+
+h1{
+	font-family:"Tines New Roman", arial;
+	font-size:50px;
+	font-style:normal;
+	font-weight:100;
+	text-align:justify; 
+	text-transform:uppercase;
+	color: blue; 
+	word-spacing:2px;
+	line-height:5px;
+	text-align: center;
+}
+ 
+
+#num1,#num2,#op1,#sol{
+	background-color:#ffffff;
+	width : 50px;
+	height : 50px;
+	margin: 5px;
+	float: left;
+	display:inline-block;
+	color : #0000ff;
+	border:2px;
+	border-color: #000000; 
+	padding : 20px 10px 10px 32px;
+	font-size: 30px;
+}
+
+#eq{
+	width : 50px;
+	height : 50px;
+	margin: 5px;
+	float: left;
+	display:inline-block;
+	padding : 20px 10px 10px 32px;
+}
+	
+
+#w1{
+	color: #00cc00;
+	font-size: 25px;
+}
+
+#w2{
+	color: #ff0000;
+	font-size: 25px;
+}
